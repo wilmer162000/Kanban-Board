@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">  
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    
+    <style>
+        .body{
+            background-color: bisque;
+        }
+
+        .task {
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            // Make .task elements draggable everywhere on the page
+            $( function() {
+            $( "#todo, #progress" ).sortable({
+            connectWith: ".connectedSortable"
+            }).disableSelection();
+            } );
+            
+        });
+    </script>
+    
+    <title>Kanban Board</title>
+</head>
+<style>
+    #todo, #in_progress, #for_approval, #done, #testing {
+      width: 220px;
+      min-height: 20px;
+      list-style-type: none;
+      margin: 10px 10px;
+      padding: 5px;
+      float: left;
+      margin-right: 10px;
+    }
+    #todo li, #in_progress li, #for_approval li, #done li, #testing li {
+      margin: 0 5px 5px 5px;
+      padding: 10px;
+      font-size: 1.2em;
+      width: 188px;
+    }
+
+    #todo li{
+        background-color: rgba(130, 235, 146, 0.24);
+    }
+
+    #in_progress li{
+        background-color: rgba(225, 226, 185, 0.637);
+    }
+
+    #for_approval li{
+        background-color: rgba(204, 170, 95, 0.623);
+    }
+
+    #testing li{
+        background-color: rgba(226, 119, 19, 0.671);
+    }
+
+    #done li{
+        background-color: rgba(216, 40, 40, 0.658);
+    }
+
+
+    ul#todo, ul#for_approval, ul#in_progress, ul#testing, ul#done{
+        margin: 10px 15px;
+        text-align: center;
+    }
+
+
+    textarea {
+    width: 180px;
+    height: 50px;
+    border-left: 5px solid black;
+    }
+
+    input{
+        width: 180px;
+        margin: 10px 0px;
+    border-left: 5px solid black;
+
+    }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#todo, #for_approval, #in_progress, #testing, #done" ).sortable({
+        connectWith: ".connectedSortable"
+      }).disableSelection();
+    } );
+    </script>
+    <body>
+        <ul id="todo" class="connectedSortable">
+            <h1>To-do</h1>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+        </ul>
+        <ul id="in_progress" class="connectedSortable">
+            <h1>In Progress</h1>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+        </ul>
+        <ul id="for_approval" class="connectedSortable">
+            <h1>For Approval</h1>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+        </ul>
+        <ul id="testing" class="connectedSortable">
+            <h1>Testing</h1>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+        </ul>
+        <ul id="done" class="connectedSortable">
+            <h1>Done</h1>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+            <li><input type="text" placeholder="title"><textarea></textarea></li>
+        </ul>
+    </body>
+</html>
